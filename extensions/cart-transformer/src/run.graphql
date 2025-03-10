@@ -1,16 +1,22 @@
 query RunInput {
   cart {
+    buyerIdentity {
+      customer {
+        id
+      }
+    }
+    note
     lines {
       id
       quantity
       cost {
         amountPerQuantity {
-          amount 
+          amount
           currencyCode
         }
       }
       merchandise {
-        ...on ProductVariant {
+        ... on ProductVariant {
           id
           __typename
           title
@@ -21,11 +27,11 @@ query RunInput {
         }
       }
     }
-  }
-  cartTransform {
-    metafield(key: "functions-configurations", namespace: "$app:cart-transforms") {
-      value
-      jsonValue
+    cartTransform {
+      metafield(key: "functions-configurations", namespace: "$app:cart-transforms") {
+        value
+        jsonValue
+      }
     }
   }
 }
