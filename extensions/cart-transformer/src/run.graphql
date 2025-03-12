@@ -1,37 +1,43 @@
 query RunInput {
   cart {
-    buyerIdentity {
-      customer {
-        id
-      }
-    }
-    note
     lines {
       id
       quantity
-      cost {
-        amountPerQuantity {
-          amount
-          currencyCode
-        }
-      }
       merchandise {
         ... on ProductVariant {
           id
-          __typename
           title
-          product {
-            title
-            handle
-          }
+          __typename
         }
-      }
-    }
-    cartTransform {
-      metafield(key: "functions-configurations", namespace: "$app:cart-transforms") {
-        value
-        jsonValue
       }
     }
   }
 }
+
+
+
+# query RunInput {
+#   cart {
+#     lines {
+#       id
+#      fabricLength: attribute(key: "giftWrap") {
+#         value
+#       }
+#       cost {
+#         totalAmount {
+#           amount
+#           currencyCode
+#         }
+#       }
+#       quantity
+#       merchandise {
+#         ... on ProductVariant {
+#           __typename
+#           product {
+#             title
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
