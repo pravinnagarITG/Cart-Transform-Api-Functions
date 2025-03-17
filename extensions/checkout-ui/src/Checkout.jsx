@@ -26,7 +26,6 @@ function Extension() {
   const isGiftWrapSelected = line.attributes?.some(attr => attr.key === "giftWrap" && attr.value === "true");
   const [localQuantity, setLocalQuantity] = useState(line.quantity);
   const cartLines = useCartLines();
-  console.log(cartLines)
   const {ui} = useApi();
   return (  
     <BlockStack padding="base">
